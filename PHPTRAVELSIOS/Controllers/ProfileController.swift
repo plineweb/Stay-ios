@@ -96,7 +96,7 @@ class ProfileController: UIViewController,UITextFieldDelegate{
     }
 
     
-    func CheckInClick(_ sender: UITapGestureRecognizer) {
+    @objc func CheckInClick(_ sender: UITapGestureRecognizer) {
         
         let picker = MICountryPicker { (name, code) -> () in
             print(code)

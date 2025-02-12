@@ -67,7 +67,7 @@ func createSlider(withImages images: [Any], withAutoScroll isAutoScrollEnabled: 
 
 }
 
-func tapOnImage(gesture: UITapGestureRecognizer){
+    @objc func tapOnImage(gesture: UITapGestureRecognizer){
     let targetView: UIImageView? = (gesture.view as? UIImageView)
     _delegate?.sbslider(self , didTapOn: (targetView?.image)!, andParentView: targetView!)
 
@@ -134,7 +134,7 @@ func tapOnImage(gesture: UITapGestureRecognizer){
         }
     }
 //pragma mark end
-func slideImage(){
+    @objc func slideImage(){
 
     var startX: CGFloat = 0.0
     let width: CGFloat = sliderMainScroller.frame.size.width

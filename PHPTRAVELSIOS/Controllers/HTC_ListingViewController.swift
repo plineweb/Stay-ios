@@ -168,17 +168,11 @@ class HTC_ListingViewController: UIViewController {
                     let h_image = indexObject["thumbnail"].stringValue
                     
                     let a = HotelListing(h_name: h_name, h_location: h_location, h_ration: h_ration, h_star: h_star, h_price: h_price, h_image: h_image, id: h_id)
-                    
                     self.mainArray.append(a)
-                    
                 }
                 self.list.controler = self
                 self.load_more.isHidden = true
                 self.list.mainArray = self.mainArray
-
-                
-                
-                
             }) { (error) in
                 
                 Toast.init(text: error.localizedDescription).show()

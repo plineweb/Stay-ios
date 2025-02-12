@@ -89,7 +89,7 @@ class HotelRoomController: UIViewController,EPCalendarPickerDelegate{
      
     }
     
-    func CheckInClick(_ sender: UITapGestureRecognizer) {
+    @objc func CheckInClick(_ sender: UITapGestureRecognizer) {
         
         check_date = "CHECK IN"
         showDate(startDate: Date())
@@ -118,7 +118,7 @@ class HotelRoomController: UIViewController,EPCalendarPickerDelegate{
         
     }
     
-    func CheckOUtClick(_ sender: UITapGestureRecognizer) {
+    @objc func CheckOUtClick(_ sender: UITapGestureRecognizer) {
         
         check_date = "CHECK OUT"
         showDate(startDate: date_from!)

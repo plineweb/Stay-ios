@@ -17,13 +17,13 @@ class InvoiceController: UIViewController {
     var login_view : Login_Book? = nil
     var guest_view : GuestController? = nil
     var coupon_view : CouponController? = nil
-
     var checkType : String? = nil
-    
     var user_id : String? = nil
     var tour_info : TourInfo? = nil
     var hotels_info : HotelInfo? = nil
     var cars_info : CarInfo? = nil
+    var id : String = ""
+
 
     var roomOb : Room_Model? = nil
 
@@ -78,12 +78,33 @@ class InvoiceController: UIViewController {
             guest_view?.model = "cars"
             guest_view?.car_info = self.cars_info
             
+        }else if checkType == "flights"{
+            
+            coupon_view?.model = "flights"
+            coupon_view?.hotels_info = self.hotels_info
+            coupon_view?.tour_info = self.tour_info
+            coupon_view?.itemId = self.id
+            
+            
+            login_view?.model = "flights"
+            login_view?.hotels_info = self.hotels_info
+            login_view?.tour_info = self.tour_info
+            login_view?.item = self.id
+            
+            
+            guest_view?.model = "flights"
+            guest_view?.hotels_info = self.hotels_info
+            guest_view?.tour_info = self.tour_info
+            guest_view?.itemID = self.id
+
+            
+            
         }
         
     }
     
     
-    func changeColor(sender: UISegmentedControl) {
+    @objc func changeColor(sender: UISegmentedControl) {
         
         if sender.titleForSegment(at: sender.selectedSegmentIndex) == "LOGIN"{
             login_view?.view.frame = uiView.bounds

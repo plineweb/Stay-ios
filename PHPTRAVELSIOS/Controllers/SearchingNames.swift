@@ -30,6 +30,8 @@ class SearchingNames: UIViewController,UITableViewDelegate,UITableViewDataSource
     let searchkeyCarsTo = "search_car_to"
     let searchkeyFlightsFrom = "search_travelport_from"
     let searchkeyFlightTo = "search_travelport_to"
+    let searchkeyFlightsManualFrom = "search_from_manual"
+    let searchkeyFlightsManualTo = "search_to_manual"
     var singleDate : Bool = false
     
     var dataAry:[AutoCompleteM] = []
@@ -135,6 +137,31 @@ class SearchingNames: UIViewController,UITableViewDelegate,UITableViewDataSource
                 
             } else {
                 let decoded : Array  = preferences.array(forKey: searchkeyFlightTo)!
+                searching.text = decoded[0] as? String
+            }
+            self.singleDate = true
+        }else if check == "search_from_manual"{
+            
+            self.url = "\(Constant.domain)suggession/airports?appKey=\(Constant.key)&q="
+            
+            if preferences.object(forKey: searchkeyFlightsManualFrom) == nil {
+                
+                
+            } else {
+                let decoded : Array  = preferences.array(forKey: searchkeyFlightsManualFrom)!
+                searching.text = decoded[0] as? String
+            }
+            self.singleDate = true
+            
+        }else if check == "search_to_manual"{
+            
+            self.url = "\(Constant.domain)suggession/airports?appKey=\(Constant.key)&q="
+            
+            if preferences.object(forKey: searchkeyFlightsManualTo) == nil {
+                
+                
+            } else {
+                let decoded : Array  = preferences.array(forKey: searchkeyFlightsManualTo)!
                 searching.text = decoded[0] as? String
             }
             self.singleDate = true
@@ -292,7 +319,7 @@ class SearchingNames: UIViewController,UITableViewDelegate,UITableViewDataSource
         cell.Ptlabel.text = self.mainArray[indexPath.row].name
      
         
-        if check == "expedia" || check == "travelportfrom" || check == "travelportto"{
+        if check == "expedia" || check == "travelportfrom" || check == "travelportto" || check == "search_from_manual" || check == "search_to_manual"{
             let bundle = "assets.bundle/"
             cell.ptImage.image =
             
@@ -326,7 +353,7 @@ class SearchingNames: UIViewController,UITableViewDelegate,UITableViewDataSource
                 callToServerExpedia(ch: searchText)
 
                 
-            }else if check == "travelportfrom" || check == "travelportto"{
+            }else if check == "travelportfrom" || check == "travelportto" || check == "search_from_manual" || check == "search_to_manual" {
                 
                 callToServerTravelPort(ch: searchText)
                 
@@ -432,6 +459,22 @@ class SearchingNames: UIViewController,UITableViewDelegate,UITableViewDataSource
             auto_array.append(ac.type)
             auto_array.append("\(ac.id)")
             preferences.set(auto_array, forKey: searchkeyFlightTo)
+            preferences.synchronize()
+            
+        }else if check == "search_from_manual"{
+            
+            auto_array.append(ac.name)
+            auto_array.append(ac.type)
+            auto_array.append("\(ac.id)")
+            preferences.set(auto_array, forKey:searchkeyFlightsManualFrom )
+            preferences.synchronize()
+            
+        }else if check == "search_to_manual"{
+            
+            auto_array.append(ac.name)
+            auto_array.append(ac.type)
+            auto_array.append("\(ac.id)")
+            preferences.set(auto_array, forKey: searchkeyFlightsManualTo)
             preferences.synchronize()
             
         }

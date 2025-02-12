@@ -36,7 +36,7 @@ class CabinContorller: UIViewController {
         self.navigationController?.navigationBar.tintColor = UIColor.white
         self.view.backgroundColor = CommonMethods.hexStringToUIColor(hex:"#EEEEEE")
         
-        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.white]
         
         
         let tapOUt = UITapGestureRecognizer(target: self, action: #selector(self.CheckOUtClick(_:)))
@@ -117,21 +117,21 @@ class CabinContorller: UIViewController {
   
     }
     
-    func CheckOUtClick(_ sender: UITapGestureRecognizer) {
+    @objc  func CheckOUtClick(_ sender: UITapGestureRecognizer) {
         
         first_class.setImage(#imageLiteral(resourceName: "marked"), for: .normal)
         business_img.setImage(#imageLiteral(resourceName: "empty_circle"), for: .normal)
         eco_img.setImage(#imageLiteral(resourceName: "empty_circle"), for: .normal)
         self.cabinString = "First"
     }
-    func businesClick(_ sender: UITapGestureRecognizer) {
+    @objc  func businesClick(_ sender: UITapGestureRecognizer) {
         
         first_class.setImage(#imageLiteral(resourceName: "empty_circle"), for: .normal)
         business_img.setImage(#imageLiteral(resourceName: "marked"), for: .normal)
         eco_img.setImage(#imageLiteral(resourceName: "empty_circle"), for: .normal)
         self.cabinString = "Business"
     }
-    func economyClick(_ sender: UITapGestureRecognizer) {
+    @objc  func economyClick(_ sender: UITapGestureRecognizer) {
         
         first_class.setImage(#imageLiteral(resourceName: "empty_circle"), for: .normal)
         business_img.setImage(#imageLiteral(resourceName: "empty_circle"), for: .normal)

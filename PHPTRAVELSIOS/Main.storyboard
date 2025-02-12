@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Eqf-b2-TxL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Eqf-b2-TxL">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -42,7 +41,7 @@
         <!--Menu View Controller-->
         <scene sceneID="WzP-vf-G0h">
             <objects>
-                <viewController storyboardIdentifier="menuViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="mJl-Tf-JQt" customClass="menuViewController" customModule="PHPTRAVELS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="menuViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="mJl-Tf-JQt" customClass="menuViewController" customModule="PHPTRAVELSIOS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="M39-Be-sxO"/>
                         <viewControllerLayoutGuide type="bottom" id="N0H-71-vKa"/>
@@ -55,7 +54,7 @@
                                 <rect key="frame" x="0.0" y="160" width="414" height="576"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MenuCell" id="Wiy-gD-EKL" customClass="MenuCell" customModule="PHPTRAVELS" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MenuCell" id="Wiy-gD-EKL" customClass="MenuCell" customModule="PHPTRAVELSIOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Wiy-gD-EKL" id="rPR-z5-SZt">
@@ -109,7 +108,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PHPTRAVELS" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oul-Wr-Dho">
-                                <rect key="frame" x="60.000000000000007" y="121" width="113.66666666666669" height="21"/>
+                                <rect key="frame" x="60.000000000000007" y="117.33333333333333" width="106.66666666666669" height="24.666666666666671"/>
                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="18"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -143,7 +142,7 @@
         <!--Invoice Controller-->
         <scene sceneID="7gK-Tf-3OV">
             <objects>
-                <viewController id="swp-nX-bGX" customClass="InvoiceController" customModule="PHPTRAVELS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="swp-nX-bGX" customClass="InvoiceController" customModule="PHPTRAVELSIOS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="IEw-F2-4EJ"/>
                         <viewControllerLayoutGuide type="bottom" id="kYl-1o-Cc9"/>
@@ -161,7 +160,7 @@
         <!--My Booking Controller-->
         <scene sceneID="jSm-i5-BAJ">
             <objects>
-                <viewController storyboardIdentifier="MyBookingController" automaticallyAdjustsScrollViewInsets="NO" id="cc3-KS-l4B" customClass="MyBookingController" customModule="PHPTRAVELS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MyBookingController" automaticallyAdjustsScrollViewInsets="NO" id="cc3-KS-l4B" customClass="MyBookingController" customModule="PHPTRAVELSIOS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="M5f-tE-qf2"/>
                         <viewControllerLayoutGuide type="bottom" id="Rg7-Kk-eBl"/>
@@ -170,11 +169,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="74" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lO4-E2-wi2" customClass="MyBookingTable" customModule="PHPTRAVELS" customModuleProvider="target">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="74" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lO4-E2-wi2" customClass="MyBookingTable" customModule="PHPTRAVELSIOS" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="20" width="414" height="716"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="mybooking_cell" rowHeight="74" id="03h-s3-naB" customClass="MyBookingCell" customModule="PHPTRAVELS" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="mybooking_cell" rowHeight="74" id="03h-s3-naB" customClass="MyBookingCell" customModule="PHPTRAVELSIOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="74"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="03h-s3-naB" id="PVo-6R-Emy">
@@ -201,7 +200,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sgo-es-qxw">
-                                                    <rect key="frame" x="78" y="48" width="37" height="20.666666666666671"/>
+                                                    <rect key="frame" x="78" y="48" width="37.666666666666657" height="20.666666666666671"/>
                                                     <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -262,7 +261,7 @@
         <!--Main Tab Bar-->
         <scene sceneID="yjt-h9-GDc">
             <objects>
-                <tabBarController storyboardIdentifier="maintab" useStoryboardIdentifierAsRestorationIdentifier="YES" id="DdT-n0-ukg" customClass="MainTabBar" customModule="PHPTRAVELS" customModuleProvider="target" colorLabel="IBBuiltInLabel-Red" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="maintab" useStoryboardIdentifierAsRestorationIdentifier="YES" id="DdT-n0-ukg" customClass="MainTabBar" customModule="PHPTRAVELSIOS" customModuleProvider="target" colorLabel="IBBuiltInLabel-Red" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="cfp-aQ-IMJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -277,7 +276,7 @@
         <!--Splash Screen-->
         <scene sceneID="FNf-JN-uNc">
             <objects>
-                <viewController id="Eqf-b2-TxL" customClass="SplashScreen" customModule="PHPTRAVELS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Eqf-b2-TxL" customClass="SplashScreen" customModule="PHPTRAVELSIOS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dWg-et-xzM"/>
                         <viewControllerLayoutGuide type="bottom" id="pOk-Bq-3T5"/>
@@ -312,8 +311,8 @@
                                                 <color key="tintColor" red="0.13441082269999999" green="0.0" blue="0.7165729555" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rxH-al-adj">
-                                                <rect key="frame" x="37" y="42" width="76" height="34"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <rect key="frame" x="39.666666666666686" y="42" width="71" height="32"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                 <state key="normal" title="Try Agian">
                                                     <color key="titleColor" red="0.13441082269999999" green="0.0" blue="0.7165729555" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
@@ -365,7 +364,7 @@
         <!--Login-->
         <scene sceneID="8nb-ZJ-UNY">
             <objects>
-                <viewController storyboardIdentifier="login" useStoryboardIdentifierAsRestorationIdentifier="YES" id="TTa-fb-ubQ" customClass="Login" customModule="PHPTRAVELS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="login" useStoryboardIdentifierAsRestorationIdentifier="YES" id="TTa-fb-ubQ" customClass="Login" customModule="PHPTRAVELSIOS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xAu-Eo-dZh"/>
                         <viewControllerLayoutGuide type="bottom" id="Ha4-9F-hDi"/>
@@ -404,7 +403,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No account yet? Create one" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mOm-IC-9Vt">
-                                <rect key="frame" x="92" y="313" width="230" height="24.666666666666686"/>
+                                <rect key="frame" x="92.333333333333314" y="313" width="230" height="24.666666666666686"/>
                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -447,7 +446,7 @@
         <!--Registration-->
         <scene sceneID="NOA-N8-PUQ">
             <objects>
-                <viewController storyboardIdentifier="BusHomeController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="O7M-uG-PdM" customClass="Registration" customModule="PHPTRAVELS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BusHomeController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="O7M-uG-PdM" customClass="Registration" customModule="PHPTRAVELSIOS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="i8w-kj-Ujs"/>
                         <viewControllerLayoutGuide type="bottom" id="s25-r1-377"/>
@@ -528,7 +527,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already a member ? Login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gJq-H3-kse">
-                                <rect key="frame" x="99.000000000000014" y="415" width="217.33333333333337" height="24.666666666666686"/>
+                                <rect key="frame" x="98.333333333333329" y="415" width="217.33333333333337" height="24.666666666666686"/>
                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -576,7 +575,7 @@
         <!--Check Invoice-->
         <scene sceneID="53J-vo-mkN">
             <objects>
-                <viewController storyboardIdentifier="check_invoice" useStoryboardIdentifierAsRestorationIdentifier="YES" id="1NQ-mK-gyx" customClass="CheckInvoice" customModule="PHPTRAVELS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="check_invoice" useStoryboardIdentifierAsRestorationIdentifier="YES" id="1NQ-mK-gyx" customClass="CheckInvoice" customModule="PHPTRAVELSIOS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CUb-OG-SAG"/>
                         <viewControllerLayoutGuide type="bottom" id="rv5-8i-A5z"/>
@@ -615,7 +614,7 @@
                                 </connections>
                             </button>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use 1984 for flights in invoice number." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2oe-ih-oEZ">
-                                <rect key="frame" x="60.666666666666657" y="320" width="293.33333333333337" height="21"/>
+                                <rect key="frame" x="60.666666666666657" y="320" width="293.33333333333337" height="20.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -656,7 +655,7 @@
         <!--About Us-->
         <scene sceneID="pCN-QC-8vz">
             <objects>
-                <viewController storyboardIdentifier="about" id="ztu-ge-IwI" customClass="AboutUs" customModule="PHPTRAVELS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="about" id="ztu-ge-IwI" customClass="AboutUs" customModule="PHPTRAVELSIOS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oFK-5N-X5J"/>
                         <viewControllerLayoutGuide type="bottom" id="P7j-Ma-fke"/>
@@ -740,7 +739,7 @@
         <!--Contactus-->
         <scene sceneID="rSe-dQ-zbM">
             <objects>
-                <viewController storyboardIdentifier="contact" id="oXu-Iz-UBQ" customClass="Contactus" customModule="PHPTRAVELS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="contact" id="oXu-Iz-UBQ" customClass="Contactus" customModule="PHPTRAVELSIOS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ROt-ao-UMc"/>
                         <viewControllerLayoutGuide type="bottom" id="KYb-am-qW9"/>
@@ -850,7 +849,7 @@
         <!--Offers Details-->
         <scene sceneID="J6F-zS-GnP">
             <objects>
-                <viewController storyboardIdentifier="OffersDetails" automaticallyAdjustsScrollViewInsets="NO" id="4Eh-H9-4om" customClass="OffersDetails" customModule="PHPTRAVELS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OffersDetails" automaticallyAdjustsScrollViewInsets="NO" id="4Eh-H9-4om" customClass="OffersDetails" customModule="PHPTRAVELSIOS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="DTt-j2-MD7"/>
                         <viewControllerLayoutGuide type="bottom" id="83T-cx-6uj"/>
@@ -1023,7 +1022,7 @@
         <!--Offers List-->
         <scene sceneID="NCS-am-sV2">
             <objects>
-                <viewController storyboardIdentifier="OffersController" automaticallyAdjustsScrollViewInsets="NO" id="WXP-Ov-ZWH" customClass="OffersList" customModule="PHPTRAVELS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OffersController" automaticallyAdjustsScrollViewInsets="NO" id="WXP-Ov-ZWH" customClass="OffersList" customModule="PHPTRAVELSIOS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3zl-tT-bfg"/>
                         <viewControllerLayoutGuide type="bottom" id="CXi-ma-Pn5"/>
@@ -1032,11 +1031,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="159" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eoO-g3-C9h" customClass="OffersTable" customModule="PHPTRAVELS" customModuleProvider="target">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="159" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eoO-g3-C9h" customClass="OffersTable" customModule="PHPTRAVELSIOS" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="20" width="414" height="716"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="offers_cell" rowHeight="159" id="CSU-ej-LWt" customClass="OffersCell" customModule="PHPTRAVELS" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="offers_cell" rowHeight="159" id="CSU-ej-LWt" customClass="OffersCell" customModule="PHPTRAVELSIOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="159"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CSU-ej-LWt" id="BBK-RC-LaA">
@@ -1044,25 +1043,25 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ktI-cD-eLU">
-                                                    <rect key="frame" x="8" y="15" width="130" height="129"/>
+                                                    <rect key="frame" x="20" y="18" width="130" height="123"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="130" id="Rjn-BZ-Qst"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Hamza Hotel Islamabad" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nCg-7Y-d97">
-                                                    <rect key="frame" x="143" y="15" width="264" height="26"/>
+                                                    <rect key="frame" x="155" y="18" width="240" height="26"/>
                                                     <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="19"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USA 45000 $" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pmM-Er-bwA">
-                                                    <rect key="frame" x="143" y="46" width="94" height="22"/>
+                                                    <rect key="frame" x="155" y="49" width="94" height="22"/>
                                                     <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
                                                     <color key="textColor" red="0.20000000000000001" green="0.73333333329999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kr5-zQ-49X">
-                                                    <rect key="frame" x="143" y="73" width="258" height="75"/>
+                                                    <rect key="frame" x="155" y="76" width="234" height="75"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="75" id="CpW-YS-JnN"/>
                                                     </constraints>
@@ -1122,7 +1121,7 @@
         <!--Profile Controller-->
         <scene sceneID="Ygk-lX-71s">
             <objects>
-                <viewController storyboardIdentifier="ProfileController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="PBn-yP-Zty" customClass="ProfileController" customModule="PHPTRAVELS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="PBn-yP-Zty" customClass="ProfileController" customModule="PHPTRAVELSIOS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9q7-Rh-4v0"/>
                         <viewControllerLayoutGuide type="bottom" id="GgL-aW-PO5"/>
@@ -1392,7 +1391,7 @@
         <!--Web View Model Controller-->
         <scene sceneID="7v4-7p-2TO">
             <objects>
-                <viewController storyboardIdentifier="WebViewModelController" automaticallyAdjustsScrollViewInsets="NO" id="FtM-W5-sTO" customClass="WebViewModelController" customModule="PHPTRAVELS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WebViewModelController" automaticallyAdjustsScrollViewInsets="NO" id="FtM-W5-sTO" customClass="WebViewModelController" customModule="PHPTRAVELSIOS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="veN-bp-FCy"/>
                         <viewControllerLayoutGuide type="bottom" id="E8X-dk-p1f"/>
@@ -1438,7 +1437,7 @@
         <!--Blog Controller-->
         <scene sceneID="cTw-Xf-xKR">
             <objects>
-                <viewController storyboardIdentifier="bloglist" automaticallyAdjustsScrollViewInsets="NO" id="lla-8I-Qnc" customClass="BlogController" customModule="PHPTRAVELS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="bloglist" automaticallyAdjustsScrollViewInsets="NO" id="lla-8I-Qnc" customClass="BlogController" customModule="PHPTRAVELSIOS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="k0y-bB-oQQ"/>
                         <viewControllerLayoutGuide type="bottom" id="qvf-e2-Htp"/>
@@ -1447,11 +1446,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="65" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EuN-cg-RyF" customClass="BlogList" customModule="PHPTRAVELS" customModuleProvider="target">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="65" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EuN-cg-RyF" customClass="BlogList" customModule="PHPTRAVELSIOS" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="30" width="414" height="706"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="blogcell" rowHeight="65" id="ZiB-2k-kDc" customClass="BlogCell" customModule="PHPTRAVELS" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="blogcell" rowHeight="65" id="ZiB-2k-kDc" customClass="BlogCell" customModule="PHPTRAVELSIOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZiB-2k-kDc" id="7A6-Vb-PAo">
@@ -1473,7 +1472,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fZ9-ik-1wr">
-                                                    <rect key="frame" x="70" y="18" width="335" height="44"/>
+                                                    <rect key="frame" x="70" y="18" width="323" height="44"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="44" id="t0F-sg-gCd"/>
                                                     </constraints>
@@ -1519,9 +1518,7 @@
                     <connections>
                         <outlet property="blog_table" destination="EuN-cg-RyF" id="TOb-E6-aOj"/>
                         <outlet property="menu" destination="aZa-9C-TjY" id="PY0-dU-nxr"/>
-                        <segue destination="xYJ-HF-YxH" kind="show" identifier="show_blog_details" id="gAX-ow-zfF">
-                            <nil key="action"/>
-                        </segue>
+                        <segue destination="xYJ-HF-YxH" kind="show" identifier="show_blog_details" id="gAX-ow-zfF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H13-l8-anD" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1531,7 +1528,7 @@
         <!--Blog Details-->
         <scene sceneID="Vq5-et-Fcl">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="xYJ-HF-YxH" customClass="BlogDetails" customModule="PHPTRAVELS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="xYJ-HF-YxH" customClass="BlogDetails" customModule="PHPTRAVELSIOS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="f8T-ux-LkC"/>
                         <viewControllerLayoutGuide type="bottom" id="sLw-eX-ENJ"/>
@@ -1607,7 +1604,7 @@
         <!--IVISAHOME-->
         <scene sceneID="o8j-BT-bdf">
             <objects>
-                <viewController storyboardIdentifier="IVISAHOME" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bki-pM-NS5" customClass="IVISAHOME" customModule="PHPTRAVELS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="IVISAHOME" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bki-pM-NS5" customClass="IVISAHOME" customModule="PHPTRAVELSIOS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ws1-aj-L7j"/>
                         <viewControllerLayoutGuide type="bottom" id="g0h-gp-7iX"/>
@@ -1780,7 +1777,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="6T1-jM-wb9"/>
-        <segue reference="OmJ-90-CqL"/>
+        <segue reference="eoi-cL-cyr"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>

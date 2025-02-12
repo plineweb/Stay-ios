@@ -84,7 +84,7 @@ class SBPhotoViewController: UIViewController {
         
     }
     
-    func imageViewDidPan(recognizer: UIPanGestureRecognizer){
+    @objc func imageViewDidPan(recognizer: UIPanGestureRecognizer){
         let translation: CGPoint = recognizer.translation(in: self.view)
         var recognizerFrame: CGRect = recognizer.view!.frame
         recognizerFrame.origin.x += translation.x

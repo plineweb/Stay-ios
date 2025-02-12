@@ -17,6 +17,8 @@ class GuestController: UIViewController {
     @IBOutlet weak var last_name: UITextField!
     @IBOutlet weak var first_name: UITextField!
     var url : String = ""
+    var itemID : String = ""
+
 
     var model : String? = nil
     
@@ -86,6 +88,29 @@ class GuestController: UIViewController {
                         
                     }
                                   
+                }
+                
+            }else if self.model == "flights"{
+                
+                FlightBooking().FlightBooking(guest: "guest", profile: profile,flight_info: self.hotels_info!, coupon_id: CouponController.Coupon_id, id : "0",cabin_class : self.tour_info!,itemId : self.itemID){ (result,error) in
+                    
+                    if error != ""{
+                        
+                        Toast.init(text: error).show()
+                        
+                    }else{
+                        if result[0] == "yes"{
+                            
+                            Toast.init(text: result[1]).show()
+                            
+                        }else{
+                            
+                            self.url = result[1]
+                            self.performSegue(withIdentifier: "show_webview", sender: self)
+                        }
+                        
+                    }
+                    
                 }
                 
             }else if self.model == "cars"{

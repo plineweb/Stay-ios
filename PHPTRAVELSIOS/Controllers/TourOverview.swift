@@ -91,9 +91,24 @@ class TourOverview: UIViewController ,EPCalendarPickerDelegate {
             
             self.policy.text = "\((overView?.policy)!)"
             
-            self.numberOfAdults.text = "\(Int((overView?.adultPrice)!)! / Int((overView?.perAdultPrice)!)!)"
-            self.numberOfChilds.text = "\(Int((overView?.childPrice)!)! / Int((overView?.perChildPrice)!)!)"
-            self.numberOfInflants.text = "\(Int((overView?.infantPrice)!)! / Int((overView?.perInfantPrice)!)!)"
+
+
+            let adultprice = Float((overView?.adultPrice.replacingOccurrences(of: ",", with: "",options: NSString.CompareOptions.literal, range:nil))!)
+            let perAdultPrice = Float((overView?.perAdultPrice.replacingOccurrences(of: ",", with: ""))!)
+            let perChildPrice = Float((overView?.perChildPrice.replacingOccurrences(of: ",", with: ""))!)
+            let childPrice = Float((overView?.childPrice.replacingOccurrences(of: ",", with: ""))!)
+            let infantPrice = Float((overView?.infantPrice.replacingOccurrences(of: ",", with: ""))!)
+            let perInfantPrice = Float((overView?.perInfantPrice.replacingOccurrences(of: ",", with: ""))!)
+            overView?.adultPrice = "\(adultprice!)"
+            overView?.perAdultPrice = "\(perAdultPrice!)"
+            overView?.perChildPrice = "\(perChildPrice!)"
+            overView?.childPrice = "\(childPrice!)"
+            overView?.infantPrice = "\(infantPrice!)"
+            overView?.perInfantPrice = "\(perInfantPrice!)"
+
+            self.numberOfAdults.text = "\(Int((adultprice!) / (perAdultPrice!)))"
+            self.numberOfChilds.text = "\(Int((childPrice!) / (perChildPrice!)))"
+            self.numberOfInflants.text = "\(Int((infantPrice!) / (perInfantPrice!)))"
 
             if overView?.childStatus == "0"
             {
@@ -221,7 +236,7 @@ class TourOverview: UIViewController ,EPCalendarPickerDelegate {
     }
     
     //Action
-    func plusAdult() {
+    @objc func plusAdult() {
 
         let maxInt : Int = Int((overView?.maxChild)!)!
         
@@ -230,24 +245,24 @@ class TourOverview: UIViewController ,EPCalendarPickerDelegate {
         if current < maxInt {
         
             self.numberOfAdults.text = "\(current+1)"
-            self.priceAdults.text = "\((overView?.currSumbol)!) \(Int(self.numberOfAdults.text!)!*Int((overView?.perAdultPrice)!)!)"
+            self.priceAdults.text = "\((overView?.currSumbol)!) \(Float(self.numberOfAdults.text!)!*Float((overView?.perAdultPrice)!)!)"
         
         }
     }
 
-    func minusAdult() {
+    @objc func minusAdult() {
         
         let current : Int = Int((self.numberOfAdults.text)!)!
         
         if current > 1 {
             
             self.numberOfAdults.text = "\(current-1)"
-            self.priceAdults.text = "\((overView?.currSumbol)!) \(Int(self.numberOfAdults.text!)!*Int((overView?.perAdultPrice)!)!)"
+            self.priceAdults.text = "\((overView?.currSumbol)!) \(Float(self.numberOfAdults.text!)!*Float((overView?.perAdultPrice)!)!)"
             
         }
     }
     
-    func plusChilds() {
+    @objc func plusChilds() {
         
         let maxInt : Int = Int((overView?.maxChild)!)!
         
@@ -256,24 +271,24 @@ class TourOverview: UIViewController ,EPCalendarPickerDelegate {
         if current < maxInt {
             
             self.numberOfChilds.text = "\(current+1)"
-            self.priceChilds.text = "\((overView?.currSumbol)!) \(Int(self.numberOfChilds.text!)!*Int((overView?.perChildPrice)!)!)"
+            self.priceChilds.text = "\((overView?.currSumbol)!) \(Float(self.numberOfChilds.text!)!*Float((overView?.perChildPrice)!)!)"
             
         }
     }
     
-    func minusChilds() {
+    @objc func minusChilds() {
         
         let current : Int = Int((self.numberOfChilds.text)!)!
         
         if current > 0 {
             
             self.numberOfChilds.text = "\(current-1)"
-            self.priceChilds.text = "\((overView?.currSumbol)!) \(Int(self.numberOfChilds.text!)!*Int((overView?.perChildPrice)!)!)"
+            self.priceChilds.text = "\((overView?.currSumbol)!) \(Float(self.numberOfChilds.text!)!*Float((overView?.perChildPrice)!)!)"
             
         }
     }
     
-    func ChnageDate() {
+    @objc func ChnageDate() {
    
         showDate(startDate:Date())
    
@@ -327,7 +342,7 @@ class TourOverview: UIViewController ,EPCalendarPickerDelegate {
      
         
     }
-    func plusInfantsMethod() {
+    @objc func plusInfantsMethod() {
         
         let maxInt : Int = Int((overView?.maxChild)!)!
         
@@ -336,19 +351,19 @@ class TourOverview: UIViewController ,EPCalendarPickerDelegate {
         if current < maxInt {
             
             self.numberOfInflants.text = "\(current+1)"
-            self.priceInflants.text = "\((overView?.currSumbol)!) \(Int(self.numberOfInflants.text!)!*Int((overView?.perInfantPrice)!)!)"
+            self.priceInflants.text = "\((overView?.currSumbol)!) \(Float(self.numberOfInflants.text!)!*Float((overView?.perInfantPrice)!)!)"
             
         }
     }
     
-    func minusInfantsMethod() {
+    @objc func minusInfantsMethod() {
         
         let current : Int = Int((self.numberOfInflants.text)!)!
         
         if current > 0 {
             
             self.numberOfInflants.text = "\(current-1)"
-            self.priceInflants.text = "\((overView?.currSumbol)!) \(Int(self.numberOfInflants.text!)!*Int((overView?.perInfantPrice)!)!)"
+            self.priceInflants.text = "\((overView?.currSumbol)!) \(Float(self.numberOfInflants.text!)!*Float((overView?.perInfantPrice)!)!)"
             
         }
     }

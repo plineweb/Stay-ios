@@ -20,6 +20,8 @@ class CouponController: UIViewController {
 
     var model : String? = nil
     var user_id  = ""
+    var itemId  = ""
+
     
     var tour_info : TourInfo? = nil
     var hotels_info : HotelInfo? = nil
@@ -184,8 +186,28 @@ class CouponController: UIViewController {
                 
             }
             
+        }else if self.model == "flights"{
+            
+            SVProgressHUD.setForegroundColor(.white)
+            SVProgressHUD.show(withStatus: "Loading")
+            SVProgressHUD.setBackgroundColor(CommonMethods.hexStringToUIColor(hex: "#2E3192"))
+            FlightBooking().FlightBooking(guest: "", profile: pro,flight_info: self.hotels_info!, coupon_id: CouponController.Coupon_id, id : user_id,cabin_class : self.tour_info!,itemId : self.itemId) { (result,error) in
+                
+                if error != ""{
+                    Toast.init(text : error).show()
+                }else{
+                    if result[0] == "yes"{
+                        
+                        Toast.init(text: result[1]).show()
+                        
+                    }else{
+                        
+                        self.url = result[1]
+                        self.performSegue(withIdentifier: "show_webview", sender: self)
+                    }
+                }
+            }
         }
-        
     
 
         

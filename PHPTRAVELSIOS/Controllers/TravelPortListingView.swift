@@ -45,12 +45,6 @@ class TravelPortListingView: UIViewController {
             
             url = "\(Constant.domain)travelport/flights?appKey=\(Constant.key)"
         }
-        
-    
-        
-        print(url)
-        
-
         NetworkManager.sharedInstance.requestGETURL(url, success: { (json) in
             
             if json["status"].stringValue == "success"{
@@ -59,11 +53,11 @@ class TravelPortListingView: UIViewController {
                 let mainObject = json["data"]
                 
                 for numberOfObject in mainObject {
-
-                    let flightObject = mainObject[numberOfObject.0]
-
-                    for flights in flightObject{
                     
+                    let flightObject = mainObject[numberOfObject.0]
+                    
+                    for flights in flightObject{
+                        
                         let finalObject = flightObject[flights.0]
                         
                         let indexObject1 = finalObject["outbound"]
@@ -89,16 +83,16 @@ class TravelPortListingView: UIViewController {
                         
                         travelPortModel?.price = price["totalprice_value"].stringValue
                         travelPortModel?.currCode = price["totalprice_unit"].stringValue
-
+                        
                         
                         let segments = indexObject1["flightItinerary"]["segments"]
                         
                         var details = TravelPortDetails()
-
+                        
                         self.travel_port_table.controller = self
                         
                         for i in 0..<segments.count {
-                        
+                            
                             let segmentsOb = segments[i]
                             
                             details = TravelPortDetails()
@@ -107,30 +101,30 @@ class TravelPortListingView: UIViewController {
                             travelPortModel?.detials.append(details)
                             
                             for j in 0..<segmentsOb.count{
-                            
+                                
                                 let innerSegments = segmentsOb[j]
                                 details = TravelPortDetails()
                                 
                                 if i == 0{
-                                
+                                    
                                     details.check_CheckUnChecked = true
                                     
                                 }else{
                                     details.check_CheckUnChecked = false
-
-                                
+                                    
+                                    
                                 }
                                 
                                 if j == 0
                                 {
                                     details.check_inner_segment = "show_button"
                                     
-                                
+                                    
                                 }else{
                                     details.check_inner_segment = "hide_button"
-
+                                    
                                 }
-
+                                
                                 details.date_from = "\(innerSegments["departureTime"]["date"]["day"].stringValue)/\(innerSegments["departureTime"]["date"]["month"].stringValue)/\(innerSegments["departureTime"]["date"]["year"].stringValue)"
                                 details.date_to = "\(innerSegments["arrivalTime"]["date"]["day"].stringValue)/\(innerSegments["arrivalTime"]["date"]["month"].stringValue)/\(innerSegments["arrivalTime"]["date"]["year"].stringValue)"
                                 details.location_from = "\(innerSegments["origin"]["code"].stringValue)"
@@ -146,18 +140,18 @@ class TravelPortListingView: UIViewController {
                                 travelPortModel?.detials.append(details)
                                 
                             }
-                        
+                            
                         }
                         
                         
                         
                         if finalObject["inbound"].exists(){
-                        
+                            
                             self.checkType = "round"
                             
                             let indexObject2 = finalObject["inbound"]
-                          
-                             travelPortModel?.b_inbound = true
+                            
+                            travelPortModel?.b_inbound = true
                             
                             travelPortModel?.b_aero_code = indexObject2["aircraft"]["equipment"]["code"].stringValue
                             travelPortModel?.b_takeOff_time = "\(indexObject2["origin"]["departure"]["time"]["hour"].stringValue) : \(indexObject2["origin"]["departure"]["time"]["minute"].stringValue)"
@@ -218,7 +212,7 @@ class TravelPortListingView: UIViewController {
                                     details.time_to = "\(innerSegments["arrivalTime"]["time"]["hour"].stringValue) : \(innerSegments["arrivalTime"]["time"]["minute"].stringValue)"
                                     
                                     details.key = "\(innerSegments["key"].stringValue)"
-
+                                    
                                     
                                     travelPortModel?.detials_inbounds.append(details)
                                     
@@ -227,7 +221,7 @@ class TravelPortListingView: UIViewController {
                             }
                         }
                         self.flights_arr.append(travelPortModel!)
-        
+                        
                     }
                     self.travel_port_table.controller = self
                    self.travel_port_table.checkType = self.checkType

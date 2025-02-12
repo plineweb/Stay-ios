@@ -21,6 +21,7 @@ class Login_Book: UIViewController {
     var tour_info : TourInfo? = nil
     var car_info : CarInfo? = nil
     var url : String = ""
+    var item : String = ""
     var outbound_rec : [TravelPortDetails] = []
     var inbound_rec : [TravelPortDetails] = []
     var hotels_info : HotelInfo? = nil
@@ -150,6 +151,27 @@ class Login_Book: UIViewController {
                         SVProgressHUD.show(withStatus: "Loading")
                         SVProgressHUD.setBackgroundColor(CommonMethods.hexStringToUIColor(hex: "#2E3192"))
                         CarBookingRequest().CarBooking(guest: "", profile: pro, coupon_id: CouponController.Coupon_id, id : login_arr[2],car_info : self.car_info!) { (result,error) in
+                            
+                            if error != ""{
+                                Toast.init(text : error).show()
+                            }else{
+                                if result[0] == "yes"{
+                                    
+                                    Toast.init(text: result[1]).show()
+                                    
+                                }else{
+                                    
+                                    self.url = result[1]
+                                    self.performSegue(withIdentifier: "show_webview", sender: self)
+                                }
+                            }
+                        }
+                    }else if self.model == "flights"{
+                        
+                        SVProgressHUD.setForegroundColor(.white)
+                        SVProgressHUD.show(withStatus: "Loading")
+                        SVProgressHUD.setBackgroundColor(CommonMethods.hexStringToUIColor(hex: "#2E3192"))
+                        FlightBooking().FlightBooking(guest: "", profile: pro,flight_info: self.hotels_info!, coupon_id: CouponController.Coupon_id, id : login_arr[2],cabin_class : self.tour_info!,itemId : self.item) { (result,error) in
                             
                             if error != ""{
                                 Toast.init(text : error).show()

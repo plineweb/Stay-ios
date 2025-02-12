@@ -35,7 +35,7 @@ class Login: UIViewController {
         
     }
     
-    func CheckInClick(_ sender: UITapGestureRecognizer) {
+    @objc func CheckInClick(_ sender: UITapGestureRecognizer) {
         
         self.performSegue(withIdentifier: "register", sender: self)
 

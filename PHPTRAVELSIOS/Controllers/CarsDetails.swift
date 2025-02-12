@@ -31,8 +31,8 @@ class CarsDetails: MXSegmentedPagerController, SBSliderDelegate{
 
         segmentedPager.segmentedControl.selectionIndicatorLocation = .down
         segmentedPager.segmentedControl.backgroundColor = CommonMethods.hexStringToUIColor(hex:"#283349")
-        segmentedPager.segmentedControl.titleTextAttributes = [NSFontAttributeName : UIFont.systemFont(ofSize: 14.0), NSForegroundColorAttributeName : UIColor.white]
-        segmentedPager.segmentedControl.selectedTitleTextAttributes = [NSForegroundColorAttributeName : UIColor.gray]
+        segmentedPager.segmentedControl.titleTextAttributes = [NSAttributedStringKey.font : UIFont.systemFont(ofSize: 14.0), NSAttributedStringKey.foregroundColor : UIColor.white]
+        segmentedPager.segmentedControl.selectedTitleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.gray]
         segmentedPager.segmentedControl.selectionStyle = .fullWidthStripe
         segmentedPager.segmentedControl.selectionIndicatorColor = CommonMethods.hexStringToUIColor(hex:"#2E3192")
         

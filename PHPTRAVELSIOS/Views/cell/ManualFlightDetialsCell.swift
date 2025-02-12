@@ -10,6 +10,12 @@ import UIKit
 
 class ManualFlightDetialsCell: UITableViewCell {
 
+    @IBOutlet weak var arrival_date: UILabel!
+    @IBOutlet weak var departure_date: UILabel!
+    @IBOutlet weak var to_locations: UILabel!
+    @IBOutlet weak var from_locations: UILabel!
+    @IBOutlet weak var departure_time: UILabel!
+    @IBOutlet weak var arrival_time: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

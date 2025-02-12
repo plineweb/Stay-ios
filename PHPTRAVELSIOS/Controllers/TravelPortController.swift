@@ -12,6 +12,7 @@ import SVProgressHUD
 
 class TravelPortController: UIViewController,UINavigationBarDelegate,UINavigationControllerDelegate ,EPCalendarPickerDelegate,cabinDataTransfer{
     
+    @IBOutlet weak var return_text: UILabel!
     @IBOutlet weak var cabinData: UIButton!
     @IBOutlet weak var cancel_round: UIButton!
     
@@ -21,6 +22,7 @@ class TravelPortController: UIViewController,UINavigationBarDelegate,UINavigatio
     @IBOutlet weak var topScreen: NSLayoutConstraint!
     
     @IBOutlet weak var container_view: UIView!
+    var checkManual = "travelport"
     
     
     
@@ -46,6 +48,8 @@ class TravelPortController: UIViewController,UINavigationBarDelegate,UINavigatio
     let preferences = UserDefaults.standard
     let searchkeyFlightsFrom = "search_travelport_from"
     let searchkeyFlightTo = "search_travelport_to"
+    let searchkeyFlightsManualFrom = "search_from_manual"
+    let searchkeyFlightsManualTo = "search_to_manual"
     let mainstoryboard:UIStoryboard = UIStoryboard(name: "CarHotelTour", bundle: nil)
 
     
@@ -98,7 +102,8 @@ class TravelPortController: UIViewController,UINavigationBarDelegate,UINavigatio
         checkReturn = "oneway"
         cancel_round.isHidden = true
         
-        
+        self.return_text.text = ""
+
         
         dateFormatter.dateFormat = "yyy-MM-dd"
         
@@ -148,23 +153,44 @@ class TravelPortController: UIViewController,UINavigationBarDelegate,UINavigatio
         
         SVProgressHUD.dismiss()
 
-        if preferences.object(forKey: searchkeyFlightsFrom) == nil {
+        if checkManual != "manual"{
+                if preferences.object(forKey: searchkeyFlightsFrom) == nil {
+                    
+                    
+                }else {
+                    
+                    decoded  = preferences.array(forKey: searchkeyFlightsFrom)! as! Array<String>
+                    location_from.setTitle(decoded[0], for: .normal)
+                    self.id_from = decoded[2]
+                }
             
+                if preferences.object(forKey: searchkeyFlightTo) == nil {
+                    
+                } else {
+                    
+                    decoded  = preferences.array(forKey: searchkeyFlightTo)! as! Array<String>
+                    location_to.setTitle(decoded[0], for: .normal)
+                    self.id_to = decoded[2]
+                }
+        }else{
+            if preferences.object(forKey: searchkeyFlightsManualFrom) == nil {
+                
+                
+            }else {
+                
+                decoded  = preferences.array(forKey: searchkeyFlightsManualFrom)! as! Array<String>
+                location_from.setTitle(decoded[0], for: .normal)
+                self.id_from = decoded[2]
+            }
+            if preferences.object(forKey: searchkeyFlightsManualTo) == nil {
+                
+            } else {
+                
+                decoded  = preferences.array(forKey: searchkeyFlightsManualTo)! as! Array<String>
+                location_to.setTitle(decoded[0], for: .normal)
+                self.id_to = decoded[2]
+            }
             
-        } else {
-            
-            decoded  = preferences.array(forKey: searchkeyFlightsFrom)! as! Array<String>
-            location_from.setTitle(decoded[0], for: .normal)
-            self.id_from = decoded[2]
-        }
-        
-        if preferences.object(forKey: searchkeyFlightTo) == nil {
-            
-        } else {
-            
-            decoded  = preferences.array(forKey: searchkeyFlightTo)! as! Array<String>
-            location_to.setTitle(decoded[0], for: .normal)
-            self.id_to = decoded[2]
         }
         
     }
@@ -175,24 +201,43 @@ class TravelPortController: UIViewController,UINavigationBarDelegate,UINavigatio
         cancel_round.isHidden = true
         bt_date_to.setTitle("Add Return",for : .normal)
         checkReturn = "oneway"
+        self.return_text.text = ""
         
     }
     
     @IBAction func hotel_search(_ sender: Any) {
         
-        if location_from.title(for : .normal) == "ORIGAN" || location_to.title(for : .normal) == "DESTINATION"{
-            
-            hotelInfo = HotelInfo(id: checkReturn, child: "0", adult: "0", checkin: date_from_api!, checkout: date_to_api!)
-            
-            self.performSegue(withIdentifier: "show_travel_port", sender: self)
-        
+        if checkManual != "manual"{
+            if location_from.title(for : .normal) == "ORIGAN" || location_to.title(for : .normal) == "DESTINATION"{
+                
+                hotelInfo = HotelInfo(id: checkReturn, child: "0", adult: "0", checkin: date_from_api!, checkout: date_to_api!)
+                
+                self.performSegue(withIdentifier: "show_travel_port", sender: self)
+                
+            }else{
+                
+                hotelInfo = HotelInfo(id: checkReturn, child: self.id_from, adult: self.id_to, checkin: date_from_api!, checkout: date_to_api!)
+                
+                self.performSegue(withIdentifier: "show_travel_port", sender: self)
+                
+            }
         }else{
-        
-            hotelInfo = HotelInfo(id: checkReturn, child: self.id_from, adult: self.id_to, checkin: date_from_api!, checkout: date_to_api!)
-            
-            self.performSegue(withIdentifier: "show_travel_port", sender: self)
-
+            if location_from.title(for : .normal) == "ORIGAN" || location_to.title(for : .normal) == "DESTINATION"{
+                
+                Toast.init(text:"Please Specify Origin or Destination").show()
+                
+            }else{
+                
+                hotelInfo = HotelInfo(id: checkReturn, child: self.id_from, adult: self.id_to, checkin: date_from_api!, checkout: date_to_api!)
+                let mainstoryboard:UIStoryboard = UIStoryboard(name: "TravelPort", bundle: nil)
+                let newViewcontroller = mainstoryboard.instantiateViewController(withIdentifier: "ManualFlights") as! ManualFlights
+                newViewcontroller.flight_info = hotelInfo
+                newViewcontroller.cabin_info = self.tourInfo
+                self.navigationController?.pushViewController(newViewcontroller, animated: true)
+                
+            }
         }
+        
         
         
         
@@ -261,9 +306,10 @@ class TravelPortController: UIViewController,UINavigationBarDelegate,UINavigatio
                 checkReturn = "round"
                 cancel_round.isHidden = false
                 check_date = "out"
+                self.return_text.text = "Return"
+
                 
             }else{
-                
                 check_date = "out"
                 showDate(type: "",startDate: date_to!)
                 
@@ -350,11 +396,21 @@ class TravelPortController: UIViewController,UINavigationBarDelegate,UINavigatio
         
         if sender.tag == 0 {
             
-            self.check_data_type = "travelportfrom"
+            if checkManual == "manual"{
+                self.check_data_type = "search_from_manual"
+
+            }else{
+                self.check_data_type = "travelportfrom"
+            }
             
+
         }else {
-            
-            self.check_data_type = "travelportto"
+            if checkManual == "manual"{
+                self.check_data_type = "search_to_manual"
+                
+            }else{
+                self.check_data_type = "travelportto"
+            }
         }
         searchController.check = self.check_data_type
         navigationController?.pushViewController(searchController, animated: true)
@@ -383,8 +439,7 @@ class TravelPortController: UIViewController,UINavigationBarDelegate,UINavigatio
             let searching = segue.destination as! CabinContorller
             searching.delegate = self
         
-        }
-        
+       }
         
     }
     

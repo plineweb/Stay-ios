@@ -61,7 +61,7 @@ class Registration: UIViewController, UITextFieldDelegate{
         return true
     }
     
-    func CheckInClick(_ sender: UITapGestureRecognizer) {
+    @objc func CheckInClick(_ sender: UITapGestureRecognizer) {
         
         self.performSegue(withIdentifier: "show_login", sender: self)
     }

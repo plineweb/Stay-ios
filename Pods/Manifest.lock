@@ -1,0 +1,46 @@
+PODS:
+  - Alamofire (4.5.1)
+  - APJTextPickerView (0.0.6)
+  - EVReflection (5.1.5):
+    - EVReflection/Core (= 5.1.5)
+  - EVReflection/Core (5.1.5)
+  - HMSegmentedControl (1.5.3)
+  - MXPagerView (0.2.1)
+  - MXParallaxHeader (0.6.1)
+  - MXSegmentedPager (3.3.0):
+    - HMSegmentedControl (= 1.5.3)
+    - MXPagerView (= 0.2.1)
+    - MXParallaxHeader (= 0.6.1)
+  - SDWebImage (4.2.0):
+    - SDWebImage/Core (= 4.2.0)
+  - SDWebImage/Core (4.2.0)
+  - SVProgressHUD (2.2.2)
+  - SwiftyJSON (3.1.4)
+  - Toaster (2.1.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - APJTextPickerView
+  - EVReflection
+  - MXSegmentedPager
+  - SDWebImage
+  - SVProgressHUD
+  - SwiftyJSON
+  - Toaster
+
+SPEC CHECKSUMS:
+  Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
+  APJTextPickerView: 431873e4e1aaa8bf8dc490220562ad1ec06d08de
+  EVReflection: a80157a584cf0b977f5cada98988a3f4e828b863
+  HMSegmentedControl: 7c6145afb50f26cec5f3243082f6f12b9f41318f
+  MXPagerView: ede184b5191b2ed689ccf05a750a9978cce42414
+  MXParallaxHeader: 858c403532ed933b381556a81ce333d7065ad182
+  MXSegmentedPager: a35ebaf939e1629f24db3bb26653c1c557362f59
+  SDWebImage: b1189fd85365c18434270a11a5cad13a1e848d53
+  SVProgressHUD: 59b2d3dabacbd051576d21d32293ca7228dc18b0
+  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+  Toaster: 8c3225dc465bef4aa57e147a288724576df8e439
+
+PODFILE CHECKSUM: c0e61538a94a167454e203f5cf87ec93a290b4fa
+
+COCOAPODS: 1.3.1

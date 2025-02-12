@@ -10,8 +10,10 @@ import UIKit
 
 struct Constant {
     
-    static let  domain : String = "http://www.phptravels.net/api/"
+    static let  domain : String = "http://192.168.0.114/v6/api/"
     static let  key : String = "phptravels"
+    static let  appname : String = "PHPTRAVELS"
+
     
     
 }

@@ -81,6 +81,7 @@ class T_p_checkout: UIViewController {
         }
         
         pass_table.pass_arr = pas_arr
+        pass_table.controller = self
         
        self.tavelinfo_height.constant = CGFloat(((pas_arr.count * 350)+70))
         
@@ -288,7 +289,7 @@ class T_p_checkout: UIViewController {
                 let indexPath = IndexPath(row: row, section: section)
                 let cell = pass_table.cellForRow(at: indexPath) as! PassengerCell
 
-                if cell.nationality.text == "" || cell.email.text == "" || cell.phone.text == "" || cell.last_name.text == "" || cell.first_name.text == ""{
+                if cell.country_btn.title(for: .normal)! == "Country" || cell.email.text == "" || cell.phone.text == "" || cell.last_name.text == "" || cell.first_name.text == ""{
                     
                     Toast(text: "Please Specify \((cell.title.text)!) Attributes").show()
                     pas_arr_book.removeAll()
@@ -300,9 +301,9 @@ class T_p_checkout: UIViewController {
                     p.p_first = cell.first_name.text!
                     p.p_last = cell.last_name.text!
                     p.p_phone = cell.phone.text!
-                    p.p_nationality = cell.nationality.text!
+                    p.p_nationality = cell.country_btn.title(for: .normal)!
                     p.p_email = cell.email.text!
-                    p.p_mtitle = cell.mr.text!
+                    p.p_mtitle = cell.mr_view.text!
                     
                     if (cell.title.text?.lowercased().contains("adult"))! {
                     

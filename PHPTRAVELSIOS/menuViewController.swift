@@ -21,7 +21,7 @@ class menuViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
+        profile_email.text = Constant.appname
         
         self.ManuNameArray.append(NameImage(name: "Home",img: "",UIimg: #imageLiteral(resourceName: "ic_home")))
         self.ManuNameArray.append(NameImage(name: "Login/Register",img: "",UIimg: #imageLiteral(resourceName: "login")))
@@ -45,7 +45,6 @@ class menuViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         
         self.ManuNameArray.append(NameImage(name: "Contact Us",img: "",UIimg: #imageLiteral(resourceName: "ic_contats")))
         self.ManuNameArray.append(NameImage(name: "About",img: "",UIimg: #imageLiteral(resourceName: "ic_about")))
-        self.ManuNameArray.append(NameImage(name: "Exit",img: "",UIimg: #imageLiteral(resourceName: "exit")))
 
         if CommonMethods.preferences.object(forKey: "login") == nil {
             //  Doesn't exist
@@ -214,10 +213,6 @@ class menuViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             let newViewcontroller = mainstoryboard.instantiateViewController(withIdentifier: "bloglist") as! BlogController
             let newFrontController = UINavigationController.init(rootViewController: newViewcontroller)
             revealviewcontroller.pushFrontViewController(newFrontController, animated: true)
-        }
-      else  if cell.lblMenuname.text! == "Exit"
-        {
-           exit(0)
         }
     }
 }

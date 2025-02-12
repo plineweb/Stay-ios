@@ -53,6 +53,12 @@ class SplashScreen: UIViewController {
                             
                             CommonMethods.ModeluArray.append(md!)
                         }
+                        if model_object["title"].stringValue.lowercased() == "flights"{
+                            
+                            md = Module(title: "FLIGHTS", type: "2")
+                            
+                            CommonMethods.ModeluArray.append(md!)
+                        }
                         else if model_object["title"].stringValue.lowercased() == "hotels"{
                             
                             md = Module(title: "HOTELS", type: "1")
